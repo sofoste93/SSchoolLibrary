@@ -42,10 +42,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Elementary\Volume.cs" />
+    <Compile Include="EnglishPaper.cs" />
+    <Compile Include="ExtensionMethods.cs" />
     <Compile Include="HighSchool\Volume.cs" />
+    <Compile Include="IScored.cs" />
     <Compile Include="Person.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="School.cs" />
+    <Compile Include="ScienceExperiment.cs" />
+    <Compile Include="ScoreUtility.cs" />
     <Compile Include="Student.cs" />
     <Compile Include="Teacher.cs" />
   </ItemGroup>
