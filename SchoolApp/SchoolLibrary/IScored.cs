@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace SchoolLibrary
 {
+	// we only define the structure here
 	interface IScored
 	{
+		float Score { get; set; }
+		float MaximumScore { get; set; }
 	}
 }
