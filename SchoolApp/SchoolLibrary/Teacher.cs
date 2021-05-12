@@ -10,5 +10,12 @@ namespace SchoolLibrary
 	{
 
 		public string Subject { get; set; }
+
+		public override float ComputeGradeAVG()
+		{
+			var tGp = 0.0f;
+			// throw new NotImplementedException();
+			return tGp;
+		}
 	}
 }

@@ -44,6 +44,8 @@ namespace SchoolFormApp
 			this.labelTwitter = new System.Windows.Forms.Label();
 			this.textTwitter = new System.Windows.Forms.TextBox();
 			this.btnClickToTest = new System.Windows.Forms.Button();
+			this.btnTestStudent = new System.Windows.Forms.Button();
+			this.btnTestTeacher = new System.Windows.Forms.Button();
 			this.SuspendLayout();
 			// 
 			// labelName
@@ -168,11 +170,33 @@ namespace SchoolFormApp
 			this.btnClickToTest.UseVisualStyleBackColor = true;
 			this.btnClickToTest.Click += new System.EventHandler(this.btnClickToTest_Click);
 			// 
+			// btnTestStudent
+			// 
+			this.btnTestStudent.Location = new System.Drawing.Point(451, 422);
+			this.btnTestStudent.Name = "btnTestStudent";
+			this.btnTestStudent.Size = new System.Drawing.Size(122, 43);
+			this.btnTestStudent.TabIndex = 4;
+			this.btnTestStudent.Text = "Test Student";
+			this.btnTestStudent.UseVisualStyleBackColor = true;
+			this.btnTestStudent.Click += new System.EventHandler(this.btnTestStudent_Click);
+			// 
+			// btnTestTeacher
+			// 
+			this.btnTestTeacher.Location = new System.Drawing.Point(451, 356);
+			this.btnTestTeacher.Name = "btnTestTeacher";
+			this.btnTestTeacher.Size = new System.Drawing.Size(122, 43);
+			this.btnTestTeacher.TabIndex = 4;
+			this.btnTestTeacher.Text = "Test Teacher";
+			this.btnTestTeacher.UseVisualStyleBackColor = true;
+			this.btnTestTeacher.Click += new System.EventHandler(this.btnTestTeacher_Click);
+			// 
 			// Form1
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(585, 489);
+			this.Controls.Add(this.btnTestTeacher);
+			this.Controls.Add(this.btnTestStudent);
 			this.Controls.Add(this.btnClickToTest);
 			this.Controls.Add(this.textTwitter);
 			this.Controls.Add(this.textPhone);
@@ -211,6 +235,8 @@ namespace SchoolFormApp
 		private System.Windows.Forms.Label labelTwitter;
 		private System.Windows.Forms.TextBox textTwitter;
 		private System.Windows.Forms.Button btnClickToTest;
+		private System.Windows.Forms.Button btnTestStudent;
+		private System.Windows.Forms.Button btnTestTeacher;
 	}
 }
 

@@ -46,8 +46,24 @@ namespace SchoolFormApp
 			MessageBox.Show(testSchool.ToString());
 
 			// find out: if u can get access to student/teacher properties
-			var student = new Student(); // working with subclasses
+			// var student = new Student(); // working with subclasses
 			
+		}
+
+		// testing abstract method
+		private void btnTestTeacher_Click(object sender, EventArgs e)
+		{
+			var teacher = new Teacher();
+			var gp = teacher.ComputeGradeAVG();
+			MessageBox.Show("The grade average is " + gp);
+		}
+
+		private void btnTestStudent_Click(object sender, EventArgs e)
+		{
+			var student = new Student();
+			var gp = student.ComputeGradeAVG();
+			MessageBox.Show("The student's grade average is " + gp);
+
 		}
 	}
 }
