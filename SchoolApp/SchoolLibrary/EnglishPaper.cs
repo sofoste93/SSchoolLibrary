@@ -6,6 +6,10 @@ using System.Threading.Tasks;
 
 namespace SchoolLibrary
 {
+		/**
+		* Preparing for interfaces
+		*/
+
 	class EnglishPaper
 	{
 		public string Title { get; set; }
