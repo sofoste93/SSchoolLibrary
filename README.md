@@ -1,7 +1,7 @@
 # SSchoolLibrary
 > a simple SMS
 
-@author
+#@Author
 - Stephane Sob F.
 
 > A simple Desktop App: written in C# using Microsoft Visual Studio
