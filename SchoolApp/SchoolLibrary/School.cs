@@ -32,6 +32,13 @@ namespace SchoolLibrary
                 }
             }
         }
+        /**
+         * constructors
+         * same name as the class
+         * but no return type needed
+         * 
+         */
+
 
         public School()
         {
@@ -39,6 +46,7 @@ namespace SchoolLibrary
             PhoneNumber = "641-1234";
         }
 
+        // now with some parameters
         public School(string SchoolName, string SchoolPhoneNumber)
         {
             Name = SchoolName;
@@ -58,17 +66,21 @@ namespace SchoolLibrary
             var result = (a + b + c) / 3;
             return result;
         }
-
+        /**
+         * overriding ToString() 
+         */
         public override string ToString()
         {
             var sb = new StringBuilder();
             sb.AppendLine(Name);
-            sb.AppendLine(this.Address);
+            sb.AppendLine(this.Address); // u can delete 'this'
             sb.AppendLine(City);
             sb.Append(", ");
             sb.Append(State);
             sb.Append("  ");
             sb.Append(Zip);
+
+            sb.AppendLine(_twitterAddress);
 
             return sb.ToString();
         }

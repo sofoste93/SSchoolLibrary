@@ -1,0 +1,13 @@
+A:\Workspace\VisualStudio\SSchoolLib\SSchoolLibrary\SchoolApp\SchoolFormApp\bin\Debug\SchoolFormApp.exe.config
+A:\Workspace\VisualStudio\SSchoolLib\SSchoolLibrary\SchoolApp\SchoolFormApp\bin\Debug\SchoolFormApp.exe
+A:\Workspace\VisualStudio\SSchoolLib\SSchoolLibrary\SchoolApp\SchoolFormApp\bin\Debug\SchoolFormApp.pdb
+A:\Workspace\VisualStudio\SSchoolLib\SSchoolLibrary\SchoolApp\SchoolFormApp\bin\Debug\SchoolLibrary.dll
+A:\Workspace\VisualStudio\SSchoolLib\SSchoolLibrary\SchoolApp\SchoolFormApp\bin\Debug\SchoolLibrary.pdb
+A:\Workspace\VisualStudio\SSchoolLib\SSchoolLibrary\SchoolApp\SchoolFormApp\obj\Debug\SchoolFormApp.csprojAssemblyReference.cache
+A:\Workspace\VisualStudio\SSchoolLib\SSchoolLibrary\SchoolApp\SchoolFormApp\obj\Debug\SchoolFormApp.Form1.resources
+A:\Workspace\VisualStudio\SSchoolLib\SSchoolLibrary\SchoolApp\SchoolFormApp\obj\Debug\SchoolFormApp.Properties.Resources.resources
+A:\Workspace\VisualStudio\SSchoolLib\SSchoolLibrary\SchoolApp\SchoolFormApp\obj\Debug\SchoolFormApp.csproj.GenerateResource.cache
+A:\Workspace\VisualStudio\SSchoolLib\SSchoolLibrary\SchoolApp\SchoolFormApp\obj\Debug\SchoolFormApp.csproj.CoreCompileInputs.cache
+A:\Workspace\VisualStudio\SSchoolLib\SSchoolLibrary\SchoolApp\SchoolFormApp\obj\Debug\SchoolFormApp.csproj.CopyComplete
+A:\Workspace\VisualStudio\SSchoolLib\SSchoolLibrary\SchoolApp\SchoolFormApp\obj\Debug\SchoolFormApp.exe
+A:\Workspace\VisualStudio\SSchoolLib\SSchoolLibrary\SchoolApp\SchoolFormApp\obj\Debug\SchoolFormApp.pdb

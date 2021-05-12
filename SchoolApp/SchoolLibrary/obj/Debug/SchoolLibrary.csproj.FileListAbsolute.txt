@@ -1,0 +1,6 @@
+A:\Workspace\VisualStudio\SSchoolLib\SSchoolLibrary\SchoolApp\SchoolLibrary\bin\Debug\SchoolLibrary.dll
+A:\Workspace\VisualStudio\SSchoolLib\SSchoolLibrary\SchoolApp\SchoolLibrary\bin\Debug\SchoolLibrary.pdb
+A:\Workspace\VisualStudio\SSchoolLib\SSchoolLibrary\SchoolApp\SchoolLibrary\obj\Debug\SchoolLibrary.csprojAssemblyReference.cache
+A:\Workspace\VisualStudio\SSchoolLib\SSchoolLibrary\SchoolApp\SchoolLibrary\obj\Debug\SchoolLibrary.csproj.CoreCompileInputs.cache
+A:\Workspace\VisualStudio\SSchoolLib\SSchoolLibrary\SchoolApp\SchoolLibrary\obj\Debug\SchoolLibrary.dll
+A:\Workspace\VisualStudio\SSchoolLib\SSchoolLibrary\SchoolApp\SchoolLibrary\obj\Debug\SchoolLibrary.pdb
