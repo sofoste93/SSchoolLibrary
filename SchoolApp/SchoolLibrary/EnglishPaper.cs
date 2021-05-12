@@ -10,7 +10,7 @@ namespace SchoolLibrary
 		* Preparing for interfaces
 		*/
 
-	class EnglishPaper
+	public class EnglishPaper
 	{
 		public string Title { get; set; }
 		public int MinimumWordCount { get; set; }

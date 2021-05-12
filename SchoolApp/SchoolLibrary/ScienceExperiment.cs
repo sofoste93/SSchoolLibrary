@@ -10,7 +10,7 @@ namespace SchoolLibrary
 	 * Preparing for interfaces
 	 */
 
-	class ScienceExperiment : IScored  // accessing the interface
+	public class ScienceExperiment : IScored  // accessing the interface
 	{
 		public string Hypothesis { get; set; }
 		public string Materials { get; set; }
