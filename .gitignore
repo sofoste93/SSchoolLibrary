@@ -1,0 +1,28 @@
+# .NET build output
+bin/
+obj/
+dist/
+publish/
+
+# Visual Studio / Rider
+.vs/
+.idea/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Test and coverage output
+TestResults/
+coverage/
+*.trx
+
+# Operating system files
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Signing material must never be committed
+*.pfx
+*.p12
+*.cer

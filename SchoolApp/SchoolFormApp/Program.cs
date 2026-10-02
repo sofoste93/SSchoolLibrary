@@ -1,22 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+namespace SchoolFormApp;
 
-namespace SchoolFormApp
+internal static class Program
 {
-	static class Program
-	{
-		/// <summary>
-		/// The main entry point for the application.
-		/// </summary>
-		[STAThread]
-		static void Main()
-		{
-			Application.EnableVisualStyles();
-			Application.SetCompatibleTextRenderingDefault(false);
-			Application.Run(new Form1());
-		}
-	}
+    [STAThread]
+    private static void Main(string[] args)
+    {
+        ApplicationConfiguration.Initialize();
+
+        // This switch renders the real interface for the README screenshot.
+        if (args.Length == 2 && args[0] == "--screenshot")
+        {
+            using var preview = new MainForm(showDemoData: true);
+            preview.RenderScreenshot(args[1]);
+            return;
+        }
+
+        Application.Run(new MainForm());
+    }
 }

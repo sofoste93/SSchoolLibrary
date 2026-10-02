@@ -1,0 +1,56 @@
+name: Windows release
+
+on:
+  push:
+    tags: ['v*']
+
+permissions:
+  contents: write
+
+jobs:
+  publish:
+    runs-on: windows-latest
+    env:
+      WINDOWS_CERTIFICATE_BASE64: ${{ secrets.WINDOWS_CERTIFICATE_BASE64 }}
+      WINDOWS_CERTIFICATE_PASSWORD: ${{ secrets.WINDOWS_CERTIFICATE_PASSWORD }}
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-dotnet@v5
+        with:
+          dotnet-version: 8.0.x
+
+      - name: Run domain checks
+        run: dotnet run --project SchoolApp/SchoolLibrary.Checks/SchoolLibrary.Checks.csproj --configuration Release
+
+      - name: Publish self-contained application
+        shell: pwsh
+        run: ./scripts/package.ps1
+
+      - name: Sign executable when a certificate is configured
+        if: ${{ env.WINDOWS_CERTIFICATE_BASE64 != '' }}
+        shell: pwsh
+        run: |
+          $certificate = Join-Path $env:RUNNER_TEMP "publisher.pfx"
+          [IO.File]::WriteAllBytes($certificate, [Convert]::FromBase64String($env:WINDOWS_CERTIFICATE_BASE64))
+          $signtool = Get-ChildItem "${env:ProgramFiles(x86)}\Windows Kits\10\bin\*\x64\signtool.exe" |
+            Sort-Object FullName -Descending | Select-Object -First 1
+          & $signtool.FullName sign /fd SHA256 /tr http://timestamp.digicert.com /td SHA256 `
+            /f $certificate /p $env:WINDOWS_CERTIFICATE_PASSWORD dist/SSchoolLibrary-Windows-x64.exe
+
+      - name: Create checksum
+        shell: pwsh
+        run: |
+          $hash = (Get-FileHash dist/SSchoolLibrary-Windows-x64.exe -Algorithm SHA256).Hash.ToLowerInvariant()
+          "$hash *SSchoolLibrary-Windows-x64.exe" | Set-Content dist/SHA256SUMS.txt
+
+      - name: Publish GitHub release
+        uses: softprops/action-gh-release@v2
+        with:
+          name: SSchoolLibrary 2.0.0 · Vintage Register
+          body: |
+            A small school register restored for modern Windows.
+
+            Download `SSchoolLibrary-Windows-x64.exe` and run it directly. The .NET runtime is included.
+          files: |
+            dist/SSchoolLibrary-Windows-x64.exe
+            dist/SHA256SUMS.txt

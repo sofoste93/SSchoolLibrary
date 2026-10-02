@@ -1,88 +1,33 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+namespace SchoolLibrary;
 
-namespace SchoolLibrary
+/// <summary>
+/// Holds the identity data displayed in the school register. Validation lives
+/// in the model so another interface can reuse the same rules later.
+/// </summary>
+public sealed class School
 {
-    public class School
+    public string Name { get; init; } = string.Empty;
+    public string Address { get; init; } = string.Empty;
+    public string City { get; init; } = string.Empty;
+    public string Region { get; init; } = string.Empty;
+    public string PostalCode { get; init; } = string.Empty;
+    public string PhoneNumber { get; init; } = string.Empty;
+    public string SocialHandle { get; init; } = string.Empty;
+
+    public IReadOnlyList<string> Validate()
     {
-        public string Name { get; set; }
-        public string Address { get; set; }
-        public string City { get; set; }
-        public string State { get; set; }
-        public string Zip { get; set; }
-        public string PhoneNumber { get; set; }
+        var errors = new List<string>();
 
-        private string _twitterAddress;
-        public string TwitterAddress
-        {
-            //make sure the twitter adderss starts with @
-            get { return _twitterAddress; }
-            set
-            {
-                if (value.StartsWith("@"))
-                {
-                    _twitterAddress = value;
-                }
-                else
-                {
-                    throw new Exception("The twitter address must begin with @");
-                }
-            }
-        }
-        /**
-         * constructors
-         * same name as the class
-         * but no return type needed
-         * 
-         */
+        if (string.IsNullOrWhiteSpace(Name))
+            errors.Add("Enter the school name.");
+        if (string.IsNullOrWhiteSpace(City))
+            errors.Add("Enter the city.");
+        if (!string.IsNullOrWhiteSpace(SocialHandle) && !SocialHandle.StartsWith('@'))
+            errors.Add("The social handle must begin with @.");
 
-
-        public School()
-        {
-            Name = "Untitled School";
-            PhoneNumber = "641-1234";
-        }
-
-        // now with some parameters
-        public School(string SchoolName, string SchoolPhoneNumber)
-        {
-            Name = SchoolName;
-            PhoneNumber = SchoolPhoneNumber;
-        }
-
-        //public float AverageThreeScores(float a, float b, float c)
-        //{
-        //    var result = (a + b + c) / 3;
-        //    return result;
-        //}
-
-        public static float AverageThreeScores(float a, float b, float c) => (a + b + c) / 3;
-
-        public static int AverageThreeScores(int a, int b, int c)
-        {
-            var result = (a + b + c) / 3;
-            return result;
-        }
-        /**
-         * overriding ToString() 
-         */
-        public override string ToString()
-        {
-            var sb = new StringBuilder();
-            sb.AppendLine(Name);
-            sb.AppendLine(this.Address); // u can delete 'this'
-            sb.AppendLine(City);
-            sb.Append(", ");
-            sb.Append(State);
-            sb.Append("  ");
-            sb.Append(Zip);
-
-            sb.AppendLine(_twitterAddress);
-
-            return sb.ToString();
-        }
+        return errors;
     }
+
+    public string FormattedAddress => string.Join(", ", new[] { Address, PostalCode, City, Region }
+        .Where(part => !string.IsNullOrWhiteSpace(part)));
 }
